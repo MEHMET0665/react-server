@@ -29,6 +29,28 @@ async def startup_db_client():
         print("✅ Successfully connected with MongoDB")
     except Exception as e:
         print("❌ Could not connect to MongoDB:", e)
+
+# Health check endpoint to test MongoDB connection
+@app.get("/health")
+async def health_check():
+    try:
+        await db.command("ping")
+        return {
+            "status": "healthy",
+            "mongodb": "connected",
+            "message": "✅ MongoDB is connected and responding"
+        }
+    except Exception as e:
+        raise HTTPException(
+            status_code=503,
+            detail={
+                "status": "unhealthy",
+                "mongodb": "error",
+                "message": "❌ MongoDB connection error",
+                "error": str(e)
+            }
+        )
+
 # ---------------------------
 # Helpers
 # ---------------------------

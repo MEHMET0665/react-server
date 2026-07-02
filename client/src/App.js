@@ -1,15 +1,17 @@
-import "./App.css";
-import { useEffect, useState } from "react";
-
+import React from 'react';
+import './App.css';
+import ToDo from './toDo'
+import SamplePage from './samplePage';
 function App() {
-  const API_URL = "https://jsonplaceholder.typicode.com/users";
-
 
   return (
-    <div style={{ padding: "20px" }}>
-    hello world
+    <div className="App">
+      <h1>test page</h1>
+   
+      <SamplePage />
     </div>
   );
 }
 
 export default App;
+

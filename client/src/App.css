@@ -36,3 +36,152 @@
     transform: rotate(360deg);
   }
 }
+.userCont{
+  display: flex;
+  flex-direction: column;
+  gap:16px;
+  margin-left: 20%;
+}
+.userRow{
+display: flex;
+flex-direction: row;
+gap: 10px;
+}
+
+.book-dashboard {
+  width: min(1100px, calc(100% - 32px));
+  margin: 32px auto;
+  text-align: left;
+}
+
+.book-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.book-dashboard-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.book-dashboard-header button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  background: #1f6feb;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.book-dashboard-status {
+  margin: 40px auto;
+  text-align: center;
+  font-size: 18px;
+}
+
+.book-dashboard-error {
+  margin-bottom: 18px;
+  border: 1px solid #f2b8b5;
+  border-radius: 6px;
+  padding: 12px;
+  background: #fff1f0;
+  color: #b42318;
+}
+
+.book-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.book-form input,
+.book-form textarea {
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 11px 12px;
+  font: inherit;
+}
+
+.book-form textarea {
+  grid-column: 1 / -1;
+  min-height: 90px;
+  resize: vertical;
+}
+
+.book-form button {
+  width: fit-content;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  background: #1a7f37;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.book-form button:disabled,
+.book-delete-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.book-card {
+  min-height: 190px;
+  border: 1px solid #d8dee4;
+  border-radius: 8px;
+  padding: 18px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(140, 149, 159, 0.16);
+}
+
+.book-card h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.book-author {
+  margin: 0 0 12px;
+  color: #57606a;
+  font-weight: 700;
+}
+
+.book-context {
+  margin: 0;
+  color: #24292f;
+  line-height: 1.5;
+}
+
+.book-delete-button {
+  margin-top: 16px;
+  border: 1px solid #cf222e;
+  border-radius: 6px;
+  padding: 8px 12px;
+  background: #fff;
+  color: #cf222e;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .book-dashboard-header,
+  .book-form {
+    grid-template-columns: 1fr;
+  }
+
+  .book-dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

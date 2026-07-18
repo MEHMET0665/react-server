@@ -4,8 +4,8 @@ import Account from "../models/account.js";
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  const { fromAccountId, toAccountId } = req.body;
-  const amount = Number(req.body.amount);
+  const { fromAccountId, toAccountId } = req.body ?? {};
+  const amount = Number(req.body?.amount);
 
   if (!Number.isFinite(amount) || amount <= 0) {
     return res.status(400).json({ error: "Amount must be positive" });

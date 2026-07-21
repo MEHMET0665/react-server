@@ -3,6 +3,11 @@ import Account from "../models/account.js";
 
 const router = express.Router();
 
+router.get("/", async (req, res) => {
+  const accounts = await Account.find().select("accountId balance -_id");
+  res.json(accounts);
+});
+
 router.get("/:accountId/balance", async (req, res) => {
   const account = await Account.findOne({ accountId: req.params.accountId });
   if (!account) return res.status(404).json({ error: "Account not found" });
